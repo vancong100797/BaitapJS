@@ -1,36 +1,38 @@
 /**
- * khối 1: Input (dữ liệu đầu vào)
- * + lương 1 ngày 100000 vnd
- * + số ngày làm 28 ngày
+ * Khối 1: Input (dữ liệu đầu vào)
+ * + soNgay, luongNgay
  * 
- * khối 2: các bước xử lý
- * B1: tạo biến và gắn giá trị khởi tạo
- * + soNgayLam
- * + luongNgay
- * + tongLuong
+ * Khối 2: Các bước xử lý
+ * B1: Tìm các thẻ bằng id
  * 
- * B2: xây dựng công thức tính toán
- * tongLuong = luongNgay + soNgayLam
+ * B2: Tạo hàm tính
+ *      + Lấy giá trị từ Form
+ *      + Kiểm tra
+ *          tongLuong = soNgay * luongNgay;
  * 
- * B3: hiển thị kết quả (console.log)
+ * B3: Gắn hàm vào sự kiện click
  *  
- * khối 3: Output (kết quả)
+ * Khối 3: Output (kết quả)
  * + Tổng lương (tongLuong)
- * 
  */
 
 //  .toLocaleString() : hiển thị dấu chia ","
 
-// B1
-var soNgayLam = 28;
-var luongNgay = 100000;
+var inpSoNgay = document.getElementById("inputSoNgay");
+var inpLuongNgay = document.getElementById("inputLuongNgay");
 var tongLuong = 0;
 
-// B2
-tongLuong = soNgayLam * luongNgay;
+function tinhLuong() {
+    var soNgay = inpSoNgay.value;
+    var luongNgay = inpLuongNgay.value;
 
-// B3
-console.log("Tổng lương: " + tongLuong.toLocaleString() + " VND");
+    tongLuong = Number(soNgay) * Number(luongNgay);
+
+    document.getElementById("thongBaoTien").innerHTML ="Tổng lương: " + tongLuong.toLocaleString() + " VND";
+}
+
+
+
 
 
 

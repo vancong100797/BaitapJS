@@ -1,35 +1,53 @@
 /**
- * khối 1: Input (dữ liệu đầu vào)
- * + chiều dài 10 m
- * + chiều rộng 5 m
+ * Khối 1: Input (dữ liệu đầu vào)
+ * + cDai, cRong
  * 
- * khối 2: các bước xử lý
- * B1: tạo biến và gắn giá trị khởi tạo
- * + chieuDai
- * + chieuRong
- * + chuVi
- * + dienTich
+ * Khối 2: Các bước xử lý
+ * B1: Tìm các thẻ bằng id
  * 
- * B2: xây dựng công thức tính toán
- * chuVi = (chieuDai + chieuRong) * 2
- * dienTich = chieuDai * chieuRong
+ * B2: Tạo hàm tính
+ *      + Lấy giá trị từ Form
+ *      + Kiểm tra
+ *          cVi = (cDai + cRong) * 2;
+ *          dTich = cDai * cRong; 
  * 
- * B3: hiển thị kết quả (console.log)
+ * B3: Gắn hàm vào sự kiện click
  *  
- * khối 3: Output (kết quả)
- * + Chu vi HCN (chuVi)
- * + Diện tích HCN (dienTich)
+ * Khối 3: Output (kết quả)
+ * + Chu vi (cVi)
+ * + Diện tích (dTich)
  */
 
-// B1
-var chieuDai = 10;
-var chieuRong = 5;
-var chuVi = 0;
-var dienTich = 0;
+var inputDai = document.getElementById("ipDai");
+var inputRong = document.getElementById("ipRong");
 
-// B2
-chuVi = (chieuDai + chieuRong) * 2;
-dienTich = chieuDai * chieuRong;
+function tinhCv() {
+    
+    var cDai = inputDai.value;
+    var cRong = inputRong.value;
 
-// B3
-console.log("Chu vi HCN: " + chuVi + " m" + "\n" + "Diện tích HCN: " + dienTich + " m²")
+    var cVi = (Number(cDai) + Number(cRong)) * 2;
+
+    document.getElementById("kQ").innerHTML = "Chu vi: " + cVi + "m";    
+}
+
+function tinhDt() {
+    
+    var cDai = inputDai.value;
+    var cRong = inputRong.value;
+
+    var dTich = Number(cDai) * Number(cRong);
+
+    document.getElementById("kQ").innerHTML = "Diện tích: " + dTich + "m²";    
+}
+
+function tinhCvDt() {
+    
+    var cDai = inputDai.value;
+    var cRong = inputRong.value;
+
+    var cVi = (Number(cDai) + Number(cRong)) * 2;
+    var dTich = Number(cDai) * Number(cRong);
+
+    document.getElementById("kQ").innerHTML = "Chu vi: " + cVi + "m" + "<br> Diện tích: " + dTich + "m²" ;    
+}

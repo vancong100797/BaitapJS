@@ -1,31 +1,33 @@
 /**
- * khối 1: Input (dữ liệu đầu vào)
- * + có 1000 USD
- * + 1 USD = 23500 VND
+ * Khối 1: Input (dữ liệu đầu vào)
+ * + uSD, vND
  * 
- * khối 2: các bước xử lý
- * B1: tạo biến và gắn giá trị khởi tạo
- * + uSD
- * + vND
- * + tienQuyDoi
+ * Khối 2: Các bước xử lý
+ * B1: Tìm các thẻ bằng id
  * 
- * B2: xây dựng công thức tính toán
- * tienQuyDoi = uSD * vND
+ * B2: Tạo hàm tính
+ *      + Lấy giá trị từ Form
+ *      + Kiểm tra
+ *          tienQuyDoi = uSD * vND;
  * 
- * B3: hiển thị kết quả (console.log)
+ * B3: Gắn hàm vào sự kiện click
  *  
- * khối 3: Output (kết quả)
- * + Tiền đổi từ USD sang VND (tienQuyDoi)
- * 
+ * Khối 3: Output (kết quả)
+ * + Tổng tiền (tienQuyDoi)
  */
 
-// B1
-var uSD = 1000;
-var vND = 23500;
+
+var inpUSD = document.getElementById("inputUSD");
+var inpVND = document.getElementById("inputVND");
 var tienQuyDoi = 0;
 
-// B2
-tienQuyDoi = uSD * vND;
+function quyDoiTien() {
+    
+    var uSD = inpUSD.value;
+    var vND = inpVND.value;
 
-// B3
-console.log("Tiền đổi từ USD sang VND: " + tienQuyDoi.toLocaleString() + " VND")
+    tienQuyDoi = Number(uSD) * Number(vND);
+
+    document.getElementById("doiTien").innerHTML = "Tổng tiền: " + tienQuyDoi.toLocaleString() + " VND";
+
+}
